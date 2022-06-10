@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/all_activity_background">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".base.InfoActivity">
+
+                <TextView
+                    android:id="@+id/back"
+                    android:layout_width="60dp"
+                    android:layout_height="0dp"
+                    android:text="返回"
+                    android:gravity="center"
+                    android:textColor="@color/tv_color"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/title_line1"
+                    />
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="使用说明"
+                    android:textColor="@color/tv_color"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/title_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#777"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/number" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="        本APP数据来源腾讯股票接口以及新浪图片接口。只涉及到一个敏感权限：读写功能，因为截图需要用到。只有使用才申请，所以请放心使用，如果觉得好的话请多多推广，另外复制指令到美团或者饿了么都可以领取红包哦，支付宝也可以每日领红包呢，一年下来就可以节省一个亿哦，当然如果红包当天用不到，直接给作者打赏就更好了，好了不白日做梦了。下面介绍本APP使用说明：\n
+
+何为金叉，两条线如果上行，就有可能出现交叉点，这个点称为金叉。而促成金叉点的价格位就是压力位。用金[9.00]压：9.52表示。
+何为死叉，两条线如果下行，就有可能出现交叉点，这个点称为死叉。而促成死叉点的价格位就是支撑位。用死[9.00]支：8.50表示。
+以此为例子：金叉、死叉、压力位、支撑位的关系一般是模糊的，因为股价高于金叉点，那么金叉也可以当成是短期弱支撑，如果股价低于
+金叉点，那么金叉点就是弱压力位，9.52压力位就是强压。有时股价也会超过9.52强压力位，所以又可以认为是短期支撑。死叉点也可以这里理解。一般来说一旦股价低于死叉位，一般是减仓观望时刻。股价站稳金叉点，就可以建仓试错。但不同的判断条件会让金叉金叉点的位置不同，因此如何来定义3条日线呢？比如说3、4、6日线组合的金叉死叉点肯定跟5、10、20日线组合的金叉死叉点是不相同的。因此找出每只股可行的三条日线是重点，但有规律可循！！比方说看折线图拐点趋势。在分析模块，可以很直观的看出不同分时不同日线的趋势凹凸点。如果在高分时比如 60分时、120分时乃至日线找到该日线走向的相邻2个最高点或者最低点几乎一致，说明这条日线是符合的。目前是设置2～20天数之间。如果找不到也别气馁，一般来说3、4、6日线是符合大部分股票短期的。常规的5、10、20日线就属于中长期。
+
+\n        个股模块
+\n趋势：建议开盘期间都开启自动更新挂着。因为会用算法来实时绘制趋势，所用流量也很少，亲测4小时只用25M流量。一般来说一旦30分时拐头向下跌破支撑位，可以减仓了，一般会有中等级别的回撤。稳妥就是等再次拐头向上站稳支撑位。当然一旦日线级别的支撑位也失守了，就可以割肉了。目前压力位的计算是最近5次最高价的平均值，支撑位就是最近5次最低价的平均值。
+\n看盘：就是自动更新启动后，实时更新并用算法分析。目前可以看买一到买五、卖一到卖五的信息。唯一需要重点关注的就是波段回调力度！抢筹也就是买方，会记录这波拉升买方一共买入多少手，然后卖方卖出时回调多少手。割肉也就是卖方，会记录这波下杀卖方一共跑了多少手，然后买方买回时反弹了多少手，一般在开盘后十分钟会很激烈，往往也能看出涨跌的可能。因为不可能一直跌，也不可能一直涨，所以就有实时反弹、反弹、回调3个数据。 实时反弹就是某个时间段起有买方入场，尝试扭转趋势，一般实时反弹达到1W手起，可以认为有反转可能，实时反弹越高，反转力度越高！ 当然反弹期间也会有卖出，因为反弹就是这段买方进场期间卖出了多少手。回调就是最大的卖出-实时反弹的数据。  一般来说一旦回调超过3W，说明有大量抛售，下跌可能就无法避免
+\nK图：就是比较正规的走势图，用来查看当前走势的。
+\n做T：就是根据判断条件的出金叉死叉位置点。一般来说最高价往往是压力位，最低价是支撑位。
+\n日线：就是用来查看第二天不同日线来到哪个位置，以及计算当明天股票来到那个位置点，后天开盘时5日线就来到那里，一般可当作时支撑点或者压力点。另一个含义就是区分洗盘还是出货。比方说：明天收盘在9.56时，后天开盘5日线就来到9.56.而明天的5日线在9.58.这就很鸡贼了，主力洗盘的话，可能就控制在9。57价位，一般散户看了收不回5日线，快跑，所以明天就看到主力洗盘，将股价收盘在9.57.但是后天开盘却发现，5日线来到9.56，股价刚好在5日线上方。所以就被洗下车了。所以需要知道第二天不同的日线位置也很重要。
+\n筹码：可以获取当天、本周、本月、近三月 四种条件的筹码分布图，也是方便了解那个位置时压力区，那个是支撑区。
+
+\n        选股模块：分为日线和分时2种筛选。
+\n日线就是根据当天的日线形态做条件，筛选出符合条件的股票，而这种筛选并不能保证股票是上涨区间的。而分时模块就不同
+\n分时模块的筛选多了 15分时、30分时、60分时3种选择，以及可以选择当前分时或者下个分时。 就是在日线筛选出来的股票中，再根据对应分时，对应日线组合上涨的股票： 比方说 日线符合锤子形态的有30个，但是要满足60分时 3、4、6日线向上的股票，可能就只有10种。说明当前60分时内，3日线是高于4日线高于6日线的，往往可以认为是上涨的。为什么要细化到分时呢？因为可能有些股票尾盘拉高骗炮，但是对应分时可以看出马脚。一般来说，选择锤子形态、30分时对应3、4、6日线向上的都可以试试T+0！当然由于是筛选近6000只股票，所以流量情况会有点大，一般每次筛选会用到500KB，跟筛选出的数据量大小有关，一般最多是1M一次，流量下慎用哦～
+
+\n        我的模块：
+可以再此设置默认个股、日线组合。每次打开APP其他页面都会获取这些默认值。当前测试版本暂时预留与作者联系方式。方便提出更改或者建议，非诚勿扰哈。 同时也可以看出当次使用流量情况。也可以点击检测更新来体验新版本新功能哦，后期会不定期更新！毕竟在股市折腾久了，总会有其他心得，APP也会越来越多功能。比方说设置某个警告值，破了就发信息通知留意等等。
+
+\n暂时就这么多，欢迎使用。再额外说一句，如果使用本APP做T成功，愿意赞助下作者么？？"
+                    android:textColor="#000"
+                    android:textSize="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/title_line1" />
+
+                <TextView
+                    android:id="@+id/agree"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="愿意"
+                    android:background="@drawable/button_press"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/agree"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

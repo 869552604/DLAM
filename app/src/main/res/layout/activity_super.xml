@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/all_activity_background">
+
+        <TextView
+            android:id="@+id/et_code"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="主力意图"
+            android:textColor="@color/tv_color"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/title_line1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_normal"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:text="返回"
+            android:textColor="@color/tv_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/download"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_normal"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="截图"
+            android:textColor="@color/tv_color"
+            app:layout_constraintTop_toTopOf="@id/back"
+            app:layout_constraintBottom_toBottomOf="@id/back"
+            app:layout_constraintLeft_toRightOf="@id/back"
+            app:layout_constraintRight_toLeftOf="@id/et_code"
+             />
+
+        <TextView
+            android:id="@+id/getCodeDetail"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_normal"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="自动看盘中"
+            android:textColor="#000"
+            android:visibility="invisible"
+            app:layout_constraintBaseline_toBaselineOf="@id/back"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/back" />
+
+        <View
+            android:id="@+id/title_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#777"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/getCodeDetail" />
+
+        <TextView
+            android:id="@+id/layout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textColor="#000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/layout1"
+            app:layout_constraintTop_toBottomOf="@id/title_line1" />
+
+
+        <TextView
+            android:id="@+id/layout1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textColor="#000"
+            app:layout_constraintLeft_toRightOf="@id/layout"
+            app:layout_constraintRight_toLeftOf="@id/layout2"
+            app:layout_constraintTop_toBottomOf="@id/title_line1" />
+
+        <TextView
+            android:id="@+id/layout2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textColor="#000"
+            app:layout_constraintLeft_toRightOf="@id/layout1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_line1" />
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"
+            app:layout_constraintTop_toBottomOf="@+id/layout2"
+            />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewTop">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contentLayout"
+                android:background="@color/all_activity_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="本页面不产生流量，实时数据来源于趋势模块自动更新"
+                    android:textColor="#000"
+                    android:textSize="12dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <View
+                    android:id="@+id/hintView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    app:layout_constraintTop_toBottomOf="@id/hint"
+                    />
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/share"
+                    android:textColor="#fff"
+                    android:background="@color/ceng"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@id/hintView1"/>
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    app:layout_constraintTop_toBottomOf="@id/tv"
+                    />
+
+                <TextView
+                    android:id="@+id/TitleDay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#000"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view120" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChartDay"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChartDay1"
+                    app:layout_constraintTop_toBottomOf="@id/TitleDay" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="今天"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChartDay"
+                    app:layout_constraintRight_toRightOf="@id/lineChartDay"
+                    app:layout_constraintTop_toTopOf="@id/lineChartDay" />
+
+                <TextView
+                    android:id="@+id/contentDay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChartDay"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChartDay"
+                    app:layout_constraintRight_toRightOf="@id/lineChartDay" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChartDay1"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChartDay"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChartDay2"
+                    app:layout_constraintTop_toBottomOf="@id/TitleDay" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="明天"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChartDay1"
+                    app:layout_constraintRight_toRightOf="@id/lineChartDay1"
+                    app:layout_constraintTop_toTopOf="@id/lineChartDay1" />
+
+                <TextView
+                    android:id="@+id/contentDay1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChartDay1"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChartDay1"
+                    app:layout_constraintRight_toRightOf="@id/lineChartDay1" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChartDay2"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChartDay1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/TitleDay" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="后天"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChartDay2"
+                    app:layout_constraintRight_toRightOf="@id/lineChartDay2"
+                    app:layout_constraintTop_toTopOf="@id/lineChartDay2" />
+
+                <TextView
+                    android:id="@+id/contentDay2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChartDay2"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChartDay2"
+                    app:layout_constraintRight_toRightOf="@id/lineChartDay2" />
+
+
+                <TextView
+                    android:id="@+id/Title5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#000"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart51"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart52"
+                    app:layout_constraintTop_toBottomOf="@id/Title5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前5分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart51"
+                    app:layout_constraintRight_toRightOf="@id/lineChart51"
+                    app:layout_constraintTop_toTopOf="@id/lineChart51" />
+
+                <TextView
+                    android:id="@+id/content51"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart51"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart51"
+                    app:layout_constraintRight_toRightOf="@id/lineChart51" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart52"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart51"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart53"
+                    app:layout_constraintTop_toBottomOf="@id/Title5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下个5分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart52"
+                    app:layout_constraintRight_toRightOf="@id/lineChart52"
+                    app:layout_constraintTop_toTopOf="@id/lineChart52" />
+
+                <TextView
+                    android:id="@+id/content52"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart52"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart52"
+                    app:layout_constraintRight_toRightOf="@id/lineChart52" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart53"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart52"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Title5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下下个5分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart53"
+                    app:layout_constraintRight_toRightOf="@id/lineChart53"
+                    app:layout_constraintTop_toTopOf="@id/lineChart53" />
+
+                <TextView
+                    android:id="@+id/content53"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart53"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart53"
+                    app:layout_constraintRight_toRightOf="@id/lineChart53" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart53"
+                    android:layout_marginTop="5dp"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/Title15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#000"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart151"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart152"
+                    app:layout_constraintTop_toBottomOf="@id/Title15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前15分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart151"
+                    app:layout_constraintRight_toRightOf="@id/lineChart151"
+                    app:layout_constraintTop_toTopOf="@id/lineChart151" />
+
+                <TextView
+                    android:id="@+id/content151"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart151"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart151"
+                    app:layout_constraintRight_toRightOf="@id/lineChart151" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart152"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart151"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart153"
+                    app:layout_constraintTop_toBottomOf="@id/Title15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下个15分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart152"
+                    app:layout_constraintRight_toRightOf="@id/lineChart152"
+                    app:layout_constraintTop_toTopOf="@id/lineChart152" />
+
+                <TextView
+                    android:id="@+id/content152"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart152"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart152"
+                    app:layout_constraintRight_toRightOf="@id/lineChart152" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart153"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart152"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Title15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下下个15分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart153"
+                    app:layout_constraintRight_toRightOf="@id/lineChart153"
+                    app:layout_constraintTop_toTopOf="@id/lineChart153" />
+
+                <TextView
+                    android:id="@+id/content153"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart153"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart153"
+                    app:layout_constraintRight_toRightOf="@id/lineChart153" />
+
+                <View
+                    android:id="@+id/view15"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart153"
+                    android:layout_marginTop="5dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/Title30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#000"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view15" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart301"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart302"
+                    app:layout_constraintTop_toBottomOf="@id/Title30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前30分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart301"
+                    app:layout_constraintRight_toRightOf="@id/lineChart301"
+                    app:layout_constraintTop_toTopOf="@id/lineChart301" />
+
+                <TextView
+                    android:id="@+id/content301"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart301"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart301"
+                    app:layout_constraintRight_toRightOf="@id/lineChart301" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart302"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart301"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart303"
+                    app:layout_constraintTop_toBottomOf="@id/Title30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下个30分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart302"
+                    app:layout_constraintRight_toRightOf="@id/lineChart302"
+                    app:layout_constraintTop_toTopOf="@id/lineChart302" />
+
+                <TextView
+                    android:id="@+id/content302"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart302"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart302"
+                    app:layout_constraintRight_toRightOf="@id/lineChart302" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart303"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart302"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Title30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下下个30分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart303"
+                    app:layout_constraintRight_toRightOf="@id/lineChart303"
+                    app:layout_constraintTop_toTopOf="@id/lineChart303" />
+
+                <TextView
+                    android:id="@+id/content303"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart303"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart303"
+                    app:layout_constraintRight_toRightOf="@id/lineChart303" />
+
+                <View
+                    android:id="@+id/view30"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart303"
+                    android:layout_marginTop="5dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/Title60"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#000"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view30" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart601"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart602"
+                    app:layout_constraintTop_toBottomOf="@id/Title60" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前60分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart601"
+                    app:layout_constraintRight_toRightOf="@id/lineChart601"
+                    app:layout_constraintTop_toTopOf="@id/lineChart601" />
+
+                <TextView
+                    android:id="@+id/content601"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart601"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart601"
+                    app:layout_constraintRight_toRightOf="@id/lineChart601" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart602"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart601"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart603"
+                    app:layout_constraintTop_toBottomOf="@id/Title60" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下个60分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart602"
+                    app:layout_constraintRight_toRightOf="@id/lineChart602"
+                    app:layout_constraintTop_toTopOf="@id/lineChart602" />
+
+                <TextView
+                    android:id="@+id/content602"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart602"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart602"
+                    app:layout_constraintRight_toRightOf="@id/lineChart602" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart603"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart602"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Title60" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下下个60分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart603"
+                    app:layout_constraintRight_toRightOf="@id/lineChart603"
+                    app:layout_constraintTop_toTopOf="@id/lineChart603" />
+
+                <TextView
+                    android:id="@+id/content603"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart603"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart603"
+                    app:layout_constraintRight_toRightOf="@id/lineChart603" />
+
+                <View
+                    android:id="@+id/view60"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart603"
+                    android:layout_marginTop="5dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/Title120"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#000"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view60" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart1201"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart1202"
+                    app:layout_constraintTop_toBottomOf="@id/Title120" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前120分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart1201"
+                    app:layout_constraintRight_toRightOf="@id/lineChart1201"
+                    app:layout_constraintTop_toTopOf="@id/lineChart1201" />
+
+                <TextView
+                    android:id="@+id/content1201"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart1201"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart1201"
+                    app:layout_constraintRight_toRightOf="@id/lineChart1201" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart1202"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart1201"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart1203"
+                    app:layout_constraintTop_toBottomOf="@id/Title120" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下个120分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart1202"
+                    app:layout_constraintRight_toRightOf="@id/lineChart1202"
+                    app:layout_constraintTop_toTopOf="@id/lineChart1202" />
+
+                <TextView
+                    android:id="@+id/content1202"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart1202"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart1202"
+                    app:layout_constraintRight_toRightOf="@id/lineChart1202" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart1203"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart1202"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Title120" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下下个120分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart1203"
+                    app:layout_constraintRight_toRightOf="@id/lineChart1203"
+                    app:layout_constraintTop_toTopOf="@id/lineChart1203" />
+
+                <TextView
+                    android:id="@+id/content1203"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart1203"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart1203"
+                    app:layout_constraintRight_toRightOf="@id/lineChart1203" />
+
+                <View
+                    android:id="@+id/view120"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart1203"
+                    android:layout_marginTop="5dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

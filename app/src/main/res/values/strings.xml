@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">哆啦A梦14</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="update">个股板块:\n上证、深证支持点击查看K图啦!\n看盘板块:\n新增买卖筹码图、分价图、历史分价图，以便更直观查看筹码分布!\n码峰板块:\n修复近3月按钮数据不准确问题!\n主力意图页面:\n优化页面显示、区间排序增加最小值最大值显示范围\n自选模块:\n先出一个体验版试试效果！(4小时约0.8M流量)
+    \n\n\n后期版本更新范围:\n均线图:\n由于接口数据没有返回均价，因此需要手动添加，添加完成后，就可以看均线趋势图，个人觉得，均线的参考价值将远大于收盘价、最高价、最低价！！\n历史分价图:\n将新增更多的数据以便一目了然!!\n最重点:\n为了让每天花25M流量挂满4小时的数据提现更大的价值，将使用数据库来保存数据，充分利用起来！\n\n\n永久免费,欢迎下载使用：pgyer.com/dlam</string>
+
+    <string name="share">永久免费,欢迎下载使用：pgyer.com/dlam</string>
+</resources>

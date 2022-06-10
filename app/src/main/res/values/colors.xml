@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="all_activity_background">#ddd</color>
+    <color name="tv_color">#000</color>
+
+    <color name="blue">#2A8EE3</color>
+    <color name="orange">#FFE8A140</color>
+    <color name="red">#FFFF0000</color>
+    <color name="write">#ffffff</color>
+    <color name="back">#000000</color>
+
+    <color name="hong">#FF0000</color>
+    <color name="ceng">#FF7D00</color>
+    <color name="huang">#FFFF00</color>
+    <color name="lv">#00FF00</color>
+    <color name="qing">#00FFFF</color>
+    <color name="lang">#0000FF</color>
+    <color name="zi">#FF00FF</color>
+    <color name="shen">#13227a</color>
+    <color name="fen">#d4237a</color>
+
+    <color name="transparent_gray">#90000000</color>
+</resources>

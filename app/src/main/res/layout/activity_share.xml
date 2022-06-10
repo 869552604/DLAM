@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".base.ShareActivity">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:text="返回"
+            android:gravity="center"
+            android:textColor="@color/tv_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/title_line1"
+            />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="感谢支持"
+            android:textColor="@color/tv_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/title_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#777"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/number" />
+
+        <ImageView
+            android:id="@+id/imgZFB"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/zfb"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_line1"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tvZFB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存支付宝二维码"
+            android:background="@drawable/button_press"
+            android:textColor="#fff"
+            android:padding="8dp"
+            app:layout_constraintLeft_toRightOf="@+id/imgZFB"
+            app:layout_constraintTop_toTopOf="@id/imgZFB"
+            app:layout_constraintBottom_toBottomOf="@id/imgZFB"/>
+
+        <ImageView
+            android:id="@+id/imgWX"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/wx"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgZFB"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tvWX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存微信二维码"
+            android:background="@drawable/button_press"
+            android:textColor="#fff"
+            android:padding="8dp"
+            app:layout_constraintLeft_toRightOf="@+id/imgWX"
+            app:layout_constraintTop_toTopOf="@id/imgWX"
+            app:layout_constraintBottom_toBottomOf="@id/imgWX"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="保存相关二维码后，打开支付宝或者微信，点击扫一扫功能，然后点击选择相册，选中保存的二维码即可给作者打赏！"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

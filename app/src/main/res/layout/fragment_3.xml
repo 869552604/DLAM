@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/all_activity_background">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/ceng"
+                    android:text="每日节省10多元，一年下来就可省一个[亿]:每天扫码领支付宝红包，再扫饿了么红包，一餐省十多元！扫码下载'番茄免费小说'APP，注册后即可领2元红包，阅读5分钟即可提现。无任何广告，喜欢小说和漫画的别错过，每天阅读时间更长，领的钱就越多！阅读5分钟即可即时提现1元！来试试吧~~"
+                    android:layout_marginTop="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="支付宝每日扫码红包"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title" />
+
+                <TextView
+                    android:id="@+id/content1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="将图片保存到相册后，打开支付宝，点击扫一扫功能，然后在扫描页面的右下角点击选择相册，就可在相册中选择这张图片进行扫码啦！"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title1"/>
+
+                <ImageView
+                    android:id="@+id/imgZFB"
+                    android:layout_width="150dp"
+                    android:layout_height="200dp"
+                    android:src="@mipmap/meiri"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content1"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvZFB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保存到相册"
+                    android:background="@drawable/button_press"
+                    android:textColor="#fff"
+                    android:padding="8dp"
+                    app:layout_constraintLeft_toLeftOf="@id/share"
+                    app:layout_constraintRight_toRightOf="@id/share"
+                    app:layout_constraintTop_toTopOf="@id/imgZFB"
+                    app:layout_constraintBottom_toTopOf="@+id/share"/>
+
+                <TextView
+                    android:id="@+id/share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一分也是爱\n用不上就打赏给作者吧！"
+                    android:background="@drawable/button_press"
+                    android:textColor="#fff"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    app:layout_constraintLeft_toRightOf="@+id/imgZFB"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvZFB"
+                    app:layout_constraintBottom_toBottomOf="@id/imgZFB"/>
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FE8C45"
+                    app:layout_constraintTop_toBottomOf="@id/imgZFB"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="美团优选便宜购"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                <TextView
+                    android:id="@+id/content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="1.5元的快乐肥宅水，买3次送2元红包，还有各种便宜水果零食，微信扫码来试试吧~"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title2"/>
+
+                <ImageView
+                    android:id="@+id/imgMT"
+                    android:layout_width="180dp"
+                    android:layout_height="200dp"
+                    android:src="@mipmap/meituan"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content2"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvMT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保存到相册"
+                    android:background="@drawable/button_press"
+                    android:textColor="#fff"
+                    android:padding="8dp"
+                    app:layout_constraintLeft_toLeftOf="@id/tvZFB"
+                    app:layout_constraintRight_toRightOf="@id/tvZFB"
+                    app:layout_constraintTop_toTopOf="@id/imgMT"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgMT"/>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FE8C45"
+                    app:layout_constraintTop_toBottomOf="@id/imgMT"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/title3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="饿了么每日红包"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                <TextView
+                    android:id="@+id/content3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="将图片保存到相册后，打开饿了么，点击扫一扫功能，然后选择相册，就可以领取啦~或者直接微信扫码也可以领取哦！"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title3"/>
+
+                <ImageView
+                    android:id="@+id/imgELM"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:src="@mipmap/elm"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content3"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvELM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保存到相册"
+                    android:background="@drawable/button_press"
+                    android:textColor="#fff"
+                    android:padding="8dp"
+                    app:layout_constraintLeft_toLeftOf="@id/tvZFB"
+                    app:layout_constraintRight_toRightOf="@id/tvZFB"
+                    app:layout_constraintTop_toTopOf="@id/imgELM"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgELM"/>
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FE8C45"
+                    app:layout_constraintTop_toBottomOf="@id/imgELM"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/title4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="番茄免费小说"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+                <TextView
+                    android:id="@+id/content4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="免费无广告哦~重点是每天阅读都能提现~只需阅读5分钟即可提现1元，填写邀请码还能再领一元，每日阅读时间越长，领的钱就越多！"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title4"/>
+
+                <ImageView
+                    android:id="@+id/imgFQ"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:src="@mipmap/fq"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content4"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvFQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保存到相册"
+                    android:background="@drawable/button_press"
+                    android:textColor="#fff"
+                    android:padding="8dp"
+                    app:layout_constraintLeft_toLeftOf="@id/tvZFB"
+                    app:layout_constraintRight_toRightOf="@id/tvZFB"
+                    app:layout_constraintTop_toTopOf="@id/imgFQ"
+                    app:layout_constraintBottom_toTopOf="@+id/tvcode"/>
+
+                <TextView
+                    android:id="@+id/tvcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="复制邀请码"
+                    android:background="@drawable/button_press"
+                    android:textColor="#fff"
+                    android:padding="8dp"
+                    app:layout_constraintLeft_toLeftOf="@id/tvZFB"
+                    app:layout_constraintRight_toRightOf="@id/tvZFB"
+                    app:layout_constraintTop_toBottomOf="@id/tvFQ"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgFQ"/>
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FE8C45"
+                    app:layout_constraintTop_toBottomOf="@id/imgFQ"
+                    android:layout_marginTop="10dp"/>
+
+                <View
+                    android:id="@+id/view40"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+
+                    app:layout_constraintTop_toBottomOf="@id/view4"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

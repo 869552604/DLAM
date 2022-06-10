@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart_5"
+        android:layout_width="150dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/lineChart_5"
+        app:layout_constraintRight_toRightOf="@id/lineChart_5"
+        app:layout_constraintTop_toTopOf="@id/lineChart_5"
+        android:layout_marginBottom="5dp"
+        android:textColor="#000"
+        android:textSize="11sp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/lineChart_5"
+        app:layout_constraintRight_toRightOf="@id/lineChart_5"
+        app:layout_constraintBottom_toBottomOf="@id/lineChart_5"
+        android:layout_marginBottom="5dp"
+        android:textColor="#000"
+        android:textSize="12sp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@id/lineChart_5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lineChart_5"
+        />
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        app:layout_constraintTop_toBottomOf="@id/lineChart_5"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#999"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        />
+
+    <TextView
+        android:id="@+id/onclick"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="K图"
+        android:textColor="#000"
+        app:layout_constraintLeft_toRightOf="@id/lineChart_5"
+        app:layout_constraintBottom_toBottomOf="@id/lineChart_5"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/button_normal"
+        />
+
+    <TextView
+        android:id="@+id/more"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="分析"
+        android:textColor="#000"
+        app:layout_constraintLeft_toRightOf="@id/onclick"
+        app:layout_constraintBottom_toBottomOf="@id/lineChart_5"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/button_normal"
+        />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#000"
+        android:gravity="center"
+        app:layout_constraintLeft_toRightOf="@id/more"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/onclick"
+        app:layout_constraintBottom_toBottomOf="@+id/onclick"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

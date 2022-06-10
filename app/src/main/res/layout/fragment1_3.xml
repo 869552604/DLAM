@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/tv_2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contentLayout"
+                android:background="@color/all_activity_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/download"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/button_normal"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="截图"
+                    android:textColor="@color/tv_color"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@id/otherDetailButton"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/otherDetailButton" />
+
+                <TextView
+                    android:id="@+id/otherDetailButton"
+                    android:layout_width="100dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_normal"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="已停止更新"
+                    android:textColor="#000"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/initialize"
+                    android:layout_width="80dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_normal"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="重新记录"
+                    android:textColor="#000"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/bottom_x_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@color/red"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/otherDetailButton" />
+
+                <TextView
+                    android:id="@+id/text_x_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="计算各个分时在[5日线]上方或者下方连续出现的次数\n(下降)出现3次低于5日线下方(建议以30分时为例)，应该看空\n(上升)出现3次高于5日线上方(建议以30分时为例)，应该看多
+\n图中显示5分时、15分时、30分时60分时最近40次5日线的趋势\n5分时:黑色    15分时:红色    30分时:青色    60分时:蓝色\n   当前价:橙色"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_1" />
+
+                <TextView
+                    android:id="@+id/share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="@string/share"
+                    android:textColor="@color/ceng"
+                    android:textSize="13sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_x_title" />
+
+                <TextView
+                    android:id="@+id/tv_now"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="当前价"
+                    android:textColor="@color/tv_color"
+                    android:textSize="15sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/share" />
+
+                <View
+                    android:id="@+id/bottom_x_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@color/red"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_now" />
+
+                <TextView
+                    android:id="@+id/text_x_title_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="5分时"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/bottom_x_1"
+                    app:layout_constraintRight_toLeftOf="@+id/text_x_title_15"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_2" />
+
+                <TextView
+                    android:id="@+id/text_x_title_15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="15分时"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toRightOf="@+id/text_x_title_5"
+                    app:layout_constraintRight_toLeftOf="@+id/text_x_title_30"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_2" />
+
+                <TextView
+                    android:id="@+id/text_x_title_30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="30分时"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toRightOf="@+id/text_x_title_15"
+                    app:layout_constraintRight_toLeftOf="@+id/text_x_title_60"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_2" />
+
+                <TextView
+                    android:id="@+id/text_x_title_60"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="60分时"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toRightOf="@+id/text_x_title_30"
+                    app:layout_constraintRight_toLeftOf="@+id/text_x_title_120"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_2" />
+
+                <TextView
+                    android:id="@+id/text_x_title_120"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="120分时"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toRightOf="@+id/text_x_title_60"
+                    app:layout_constraintRight_toLeftOf="@+id/text_x_title_240"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_2" />
+
+                <TextView
+                    android:id="@+id/text_x_title_240"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="日线"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toRightOf="@+id/text_x_title_120"
+                    app:layout_constraintRight_toRightOf="@+id/bottom_x_1"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_2" />
+
+                <View
+                    android:id="@+id/bottom_x_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@color/red"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_x_title_5" />
+
+                <TextView
+                    android:id="@+id/text_x_number5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/text_x_title_5"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_5"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_3" />
+
+                <TextView
+                    android:id="@+id/text_x_number15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/text_x_title_15"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_15"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_3" />
+
+                <TextView
+                    android:id="@+id/text_x_number30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/text_x_title_30"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_30"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_3" />
+
+                <TextView
+                    android:id="@+id/text_x_number60"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/text_x_title_60"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_60"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_3" />
+
+                <TextView
+                    android:id="@+id/text_x_number120"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/text_x_title_120"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_120"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_3" />
+
+                <TextView
+                    android:id="@+id/text_x_number240"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/text_x_title_240"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_240"
+                    app:layout_constraintTop_toBottomOf="@id/bottom_x_3" />
+
+
+                <View
+                    android:id="@+id/bottom_x_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/red"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_x_number5" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_600"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout1" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineChart_600" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@id/bottom_x_4"
+                    app:layout_constraintLeft_toLeftOf="@id/bottom_x_2"
+                    app:layout_constraintTop_toTopOf="@id/bottom_x_1" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@id/bottom_x_4"
+                    app:layout_constraintLeft_toLeftOf="@id/text_x_title_5"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_15"
+                    app:layout_constraintTop_toTopOf="@id/bottom_x_2" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@id/bottom_x_4"
+                    app:layout_constraintLeft_toLeftOf="@id/text_x_title_15"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_30"
+                    app:layout_constraintTop_toTopOf="@id/bottom_x_2" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@id/bottom_x_4"
+                    app:layout_constraintLeft_toLeftOf="@id/text_x_title_30"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_60"
+                    app:layout_constraintTop_toTopOf="@id/bottom_x_2" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@id/bottom_x_4"
+                    app:layout_constraintLeft_toLeftOf="@id/text_x_title_60"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_120"
+                    app:layout_constraintTop_toTopOf="@id/bottom_x_2" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@id/bottom_x_4"
+                    app:layout_constraintLeft_toLeftOf="@id/text_x_title_120"
+                    app:layout_constraintRight_toRightOf="@+id/text_x_title_240"
+                    app:layout_constraintTop_toTopOf="@id/bottom_x_2" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@id/bottom_x_4"
+                    app:layout_constraintRight_toRightOf="@+id/bottom_x_2"
+                    app:layout_constraintTop_toTopOf="@id/bottom_x_1" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_5"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart_15"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_15"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart_5"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_20"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart_30"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart_5" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_30"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintLeft_toRightOf="@+id/lineChart_20"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart_5" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_40"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/lineChart_60"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart_20" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_60"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart_40"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart_20" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_120"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart_240"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart_40" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_240"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart_120"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart_40" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_360"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/lineChart_480"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart_120" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart_480"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/lineChart_360"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart_120" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="点击上方对应分时可增加对应的趋势线"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_600"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_600"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_600" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_5"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_5"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_5" />
+
+                <TextView
+                    android:id="@+id/content5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_5"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_5"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_15"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_15"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_15" />
+
+                <TextView
+                    android:id="@+id/content15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_15"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_15"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_30"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_30"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_30" />
+
+                <TextView
+                    android:id="@+id/content30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_30"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_30"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_60"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_60"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_60" />
+
+                <TextView
+                    android:id="@+id/content60"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_60"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_60"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_60" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="120分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_120"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_120"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_120" />
+
+                <TextView
+                    android:id="@+id/content120"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_120"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_120"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_120" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="日线"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_240"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_240"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_240" />
+
+                <TextView
+                    android:id="@+id/content240"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_240"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_240"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_240" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周线"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_360"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_360"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_360" />
+
+                <TextView
+                    android:id="@+id/content360"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_360"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_360"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_360" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="月线"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_480"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_480"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_480" />
+
+                <TextView
+                    android:id="@+id/content480"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/ceng"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_480"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_480"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_480" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_20"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_20"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_20" />
+
+                <TextView
+                    android:id="@+id/content20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/ceng"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_20"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_20"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_20"
+                    android:gravity="center"
+                    android:layout_marginBottom="4dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="40分时"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_40"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_40"
+                    app:layout_constraintTop_toTopOf="@id/lineChart_40" />
+
+                <TextView
+                    android:id="@+id/content40"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/ceng"
+                    app:layout_constraintLeft_toLeftOf="@id/lineChart_40"
+                    app:layout_constraintRight_toRightOf="@id/lineChart_40"
+                    app:layout_constraintBottom_toBottomOf="@id/lineChart_40"
+                    android:gravity="center"
+                    android:layout_marginBottom="4dp"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout1"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/layout2"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_x_4">
+
+                    <TextView
+                        android:id="@+id/layout_tv_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="20分时"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/checkbox1" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox1"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/check_lv"
+                        android:button="@null"
+                        android:enabled="false"
+                        app:layout_constraintBottom_toBottomOf="@id/layout_tv_1"
+                        app:layout_constraintLeft_toRightOf="@id/layout_tv_1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/layout_tv_1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout2"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/layout1"
+                    app:layout_constraintRight_toLeftOf="@id/layout3"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_x_4">
+
+                    <TextView
+                        android:id="@+id/layout_tv_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="40分时"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/checkbox2" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox2"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/check_zi"
+                        android:button="@null"
+                        android:enabled="false"
+                        app:layout_constraintBottom_toBottomOf="@id/layout_tv_2"
+                        app:layout_constraintLeft_toRightOf="@id/layout_tv_2"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/layout_tv_2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout3"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/layout2"
+                    app:layout_constraintRight_toLeftOf="@id/layout4"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_x_4">
+
+                    <TextView
+                        android:id="@+id/layout_tv_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="120分时"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/checkbox3" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox3"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/check_shen"
+                        android:button="@null"
+                        android:enabled="false"
+                        app:layout_constraintBottom_toBottomOf="@id/layout_tv_3"
+                        app:layout_constraintLeft_toRightOf="@id/layout_tv_3"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/layout_tv_3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout4"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintLeft_toRightOf="@id/layout3"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_x_4">
+
+                    <TextView
+                        android:id="@+id/layout_tv_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="日线"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/checkbox4" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox4"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/check_fen"
+                        android:button="@null"
+                        android:enabled="false"
+                        app:layout_constraintBottom_toBottomOf="@id/layout_tv_4"
+                        app:layout_constraintLeft_toRightOf="@id/layout_tv_4"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/layout_tv_4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/superActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="想做T？那点进来看看主力接下来意图吧!"
+                    android:background="@drawable/button_press"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart_480"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/superActivity"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#999"
+            app:layout_constraintBottom_toTopOf="@id/tv_2" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:background="@drawable/button_normal"
+            android:gravity="center"
+            android:text="当前价"
+            android:textColor="#000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="卖一:"
+            android:textColor="#000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_2" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="买一:"
+            android:textColor="#000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tv_2"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

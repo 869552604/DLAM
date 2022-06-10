@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/update_background">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更新提示"
+            android:textColor="#333333"
+            android:textSize="17sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="15dp" />
+
+
+        <TextView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:layout_marginTop="27dp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#000"
+            android:text="检测到新版本啦，尽早更新可以更快享受新版本功能哟～"
+            />
+
+        <TextView
+            android:id="@+id/left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下次再说"
+            android:textColor="#999999"
+            android:background="@drawable/button_gray"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/right"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView"
+            android:layout_marginTop="37.5dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即更新"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_press"
+            app:layout_constraintLeft_toRightOf="@id/left"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView"
+            android:layout_marginTop="37.5dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp"
+            android:textSize="12dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20.5dp"
+            app:layout_constraintTop_toBottomOf="@id/left" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
